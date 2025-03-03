@@ -1,0 +1,19 @@
+{
+	"name": "Monorepo",
+	"build": {
+		"dockerfile": "Dockerfile",
+		"context": "."
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"bazelbuild.vscode-bazel",
+				"ms-azuretools.vscode-docker"
+			]
+		}
+	},
+	// "mounts": [
+	// 	"source=${localWorkspaceFolder}/.devcontainer/bazel-cache,target=/home/vscode/.cache/bazel,type=bind"
+	// ],
+	"remoteUser": "vscode"
+}

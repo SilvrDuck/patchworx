@@ -1,0 +1,171 @@
+###################################
+# OS & Editor Files
+###################################
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.sln.ide
+*.iml
+*.ipr
+*.iws
+.idea/
+.vscode/
+*.log
+
+###################################
+# Bazel
+###################################
+bazel-*
+/bazel-bin
+/bazel-out
+/bazel-genfiles
+/bazel-testlogs
+/bazel-workspace
+/bazelrc.user
+**/*.runfiles
+
+###################################
+# C / C++
+###################################
+*.o
+*.obj
+*.so
+*.so.*
+*.dll
+*.dylib
+*.lib
+*.a
+*.lo
+*.slo
+*.d
+cmake-build-*
+CMakeCache.txt
+CMakeFiles/
+Makefile
+compile_commands.json
+
+###################################
+# Rust
+###################################
+/target/
+**/*.rs.bk
+# If you’re building executables only, you can commit Cargo.lock;
+# but you can ignore it if you prefer for libraries:
+# Cargo.lock
+
+###################################
+# Go
+###################################
+/bin/
+/pkg/
+go.sum
+# If you want to ignore the go.mod or go.sum, uncomment below:
+# go.mod
+
+###################################
+# Node / TypeScript
+###################################
+node_modules/
+npm-debug.log*
+yarn-error.log
+pnpm-lock.yaml
+dist/
+build/
+coverage/
+*.env
+
+###################################
+# Ruby
+###################################
+/.bundle/
+/vendor/bundle
+log/
+coverage/
+*.gem
+# Keep Gemfile.lock if your workflow requires it
+
+###################################
+# Java / Scala / Kotlin
+###################################
+*.class
+*.jar
+*.war
+*.ear
+*.jdm
+*.rbc
+*.launch
+.gradle/
+build/
+out/
+.mvn/
+target/
+*.log
+# Scala metals & bloop
+.bloop/
+.metals/
+
+###################################
+# Elixir
+###################################
+/_build/
+deps/
+erl_crash.dump
+*.beam
+# Generally keep mix.lock
+
+###################################
+# .NET (C#, F#)
+###################################
+bin/
+obj/
+*.user
+*.suo
+*.cache
+*.pdb
+*.mdb
+*.exe
+*.dll
+*.vcxproj*
+*.csproj.user
+*.fsproj.user
+.project
+.nuget/
+
+###################################
+# Haskell
+###################################
+dist/
+dist-newstyle/
+.stack-work/
+*.hi
+*.o
+*.dyn_o
+*.dyn_hi
+cabal.sandbox.config
+cabal.project.local
+cabal.project.local~
+*.prof
+*.hp
+*.eventlog
+
+###################################
+# Docker
+###################################
+docker-compose.override.yml
+.envrc
+.env.*
+
+###################################
+# Misc / Generated
+###################################
+*.pyc
+*.egg-info/
+*.egg
+*.tar.gz
+*.log
+*.tmp
+*.pid
+*.seed
+*.backup
+*.bak
