@@ -1,0 +1,3 @@
+module(name = "patchworx")
+
+bazel_dep(name = "rules_zig", version = "0.7.0")

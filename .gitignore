@@ -50,9 +50,7 @@ compile_commands.json
 ###################################
 /target/
 **/*.rs.bk
-# If you’re building executables only, you can commit Cargo.lock;
-# but you can ignore it if you prefer for libraries:
-# Cargo.lock
+Cargo.lock
 
 ###################################
 # Go
@@ -60,8 +58,7 @@ compile_commands.json
 /bin/
 /pkg/
 go.sum
-# If you want to ignore the go.mod or go.sum, uncomment below:
-# go.mod
+go.mod
 
 ###################################
 # Node / TypeScript
@@ -76,17 +73,17 @@ coverage/
 *.env
 
 ###################################
-# Ruby
+# Kotlin
 ###################################
-/.bundle/
-/vendor/bundle
-log/
-coverage/
-*.gem
-# Keep Gemfile.lock if your workflow requires it
+/.gradle/
+/build/
+*.iml
+*.kts
+.idea/
+*.log
 
 ###################################
-# Java / Scala / Kotlin
+# Java / Scala
 ###################################
 *.class
 *.jar
@@ -101,7 +98,6 @@ out/
 .mvn/
 target/
 *.log
-# Scala metals & bloop
 .bloop/
 .metals/
 
@@ -112,7 +108,7 @@ target/
 deps/
 erl_crash.dump
 *.beam
-# Generally keep mix.lock
+mix.lock
 
 ###################################
 # .NET (C#, F#)
@@ -148,6 +144,13 @@ cabal.project.local~
 *.prof
 *.hp
 *.eventlog
+
+###################################
+# Zig
+###################################
+.zig-cache/
+zig-out/
+*.ziggy
 
 ###################################
 # Docker
