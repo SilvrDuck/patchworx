@@ -26,4 +26,5 @@ http_archive(
     url = "https://github.com/zigzap/zap/archive/refs/tags/v0.9.1.tar.gz",
     build_file = "@//third_party/zap:BUILD.bazel",
     strip_prefix = "zap-0.9.1",
+    integrity = "sha256-aXdZwQq6YW3X0H0znmPj8yM7oe6TS4Bh7FdOmGfdJ+w=",
 )
