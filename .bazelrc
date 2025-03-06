@@ -1,1 +1,6 @@
 common --enable_bzlmod
+common --enable_platform_specific_config
+# needed for proper zig cache usage
+build:linux --sandbox_add_mount_pair=/tmp
+build:macos --sandbox_add_mount_pair=/var/tmp
+build:windows --sandbox_add_mount_pair=C:\Temp

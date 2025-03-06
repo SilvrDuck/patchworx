@@ -72,11 +72,12 @@
     "https://bcr.bazel.build/modules/rules_cc/0.0.15/MODULE.bazel": "6704c35f7b4a72502ee81f61bf88706b54f06b3cbe5558ac17e2e14666cd5dcc",
     "https://bcr.bazel.build/modules/rules_cc/0.0.16/MODULE.bazel": "7661303b8fc1b4d7f532e54e9d6565771fea666fbdf839e0a86affcd02defe87",
     "https://bcr.bazel.build/modules/rules_cc/0.0.17/MODULE.bazel": "2ae1d8f4238ec67d7185d8861cb0a2cdf4bc608697c331b95bf990e69b62e64a",
-    "https://bcr.bazel.build/modules/rules_cc/0.0.17/source.json": "4db99b3f55c90ab28d14552aa0632533e3e8e5e9aea0f5c24ac0014282c2a7c5",
     "https://bcr.bazel.build/modules/rules_cc/0.0.2/MODULE.bazel": "6915987c90970493ab97393024c156ea8fb9f3bea953b2f3ec05c34f19b5695c",
     "https://bcr.bazel.build/modules/rules_cc/0.0.6/MODULE.bazel": "abf360251023dfe3efcef65ab9d56beefa8394d4176dd29529750e1c57eaa33f",
     "https://bcr.bazel.build/modules/rules_cc/0.0.8/MODULE.bazel": "964c85c82cfeb6f3855e6a07054fdb159aced38e99a5eecf7bce9d53990afa3e",
     "https://bcr.bazel.build/modules/rules_cc/0.0.9/MODULE.bazel": "836e76439f354b89afe6a911a7adf59a6b2518fafb174483ad78a2a2fde7b1c5",
+    "https://bcr.bazel.build/modules/rules_cc/0.1.1/MODULE.bazel": "2f0222a6f229f0bf44cd711dc13c858dad98c62d52bd51d8fc3a764a83125513",
+    "https://bcr.bazel.build/modules/rules_cc/0.1.1/source.json": "d61627377bd7dd1da4652063e368d9366fc9a73920bfa396798ad92172cf645c",
     "https://bcr.bazel.build/modules/rules_foreign_cc/0.9.0/MODULE.bazel": "c9e8c682bf75b0e7c704166d79b599f93b72cfca5ad7477df596947891feeef6",
     "https://bcr.bazel.build/modules/rules_fuzzing/0.5.2/MODULE.bazel": "40c97d1144356f52905566c55811f13b299453a14ac7769dfba2ac38192337a8",
     "https://bcr.bazel.build/modules/rules_fuzzing/0.5.2/source.json": "c8b1e2c717646f1702290959a3302a178fb639d987ab61d548105019f11e527e",
@@ -141,5 +142,238 @@
     "https://bcr.bazel.build/modules/zlib/1.3.1/MODULE.bazel": "751c9940dcfe869f5f7274e1295422a34623555916eb98c174c1e945594bf198"
   },
   "selectedYankedVersions": {},
-  "moduleExtensions": {}
+  "moduleExtensions": {
+    "@@platforms//host:extension.bzl%host_platform": {
+      "general": {
+        "bzlTransitiveDigest": "xelQcPZH8+tmuOHVjL9vDxMnnQNMlwj0SlvgoqBkm4U=",
+        "usagesDigest": "y483Idm2IiD4XtsMj+Pwk6t8YPsamVkqdXXO+KI4QFY=",
+        "recordedFileInputs": {},
+        "recordedDirentsInputs": {},
+        "envVariables": {},
+        "generatedRepoSpecs": {
+          "host_platform": {
+            "repoRuleId": "@@platforms//host:extension.bzl%host_platform_repo",
+            "attributes": {}
+          }
+        },
+        "recordedRepoMappingEntries": []
+      }
+    },
+    "@@rules_java+//java:rules_java_deps.bzl%compatibility_proxy": {
+      "general": {
+        "bzlTransitiveDigest": "84xJEZ1jnXXwo8BXMprvBm++rRt4jsTu9liBxz0ivps=",
+        "usagesDigest": "jTQDdLDxsS43zuRmg1faAjIEPWdLAbDAowI1pInQSoo=",
+        "recordedFileInputs": {},
+        "recordedDirentsInputs": {},
+        "envVariables": {},
+        "generatedRepoSpecs": {
+          "compatibility_proxy": {
+            "repoRuleId": "@@rules_java+//java:rules_java_deps.bzl%_compatibility_proxy_repo_rule",
+            "attributes": {}
+          }
+        },
+        "recordedRepoMappingEntries": [
+          [
+            "rules_java+",
+            "bazel_tools",
+            "bazel_tools"
+          ]
+        ]
+      }
+    },
+    "@@rules_kotlin+//src/main/starlark/core/repositories:bzlmod_setup.bzl%rules_kotlin_extensions": {
+      "general": {
+        "bzlTransitiveDigest": "sFhcgPbDQehmbD1EOXzX4H1q/CD5df8zwG4kp4jbvr8=",
+        "usagesDigest": "QI2z8ZUR+mqtbwsf2fLqYdJAkPOHdOV+tF2yVAUgRzw=",
+        "recordedFileInputs": {},
+        "recordedDirentsInputs": {},
+        "envVariables": {},
+        "generatedRepoSpecs": {
+          "com_github_jetbrains_kotlin_git": {
+            "repoRuleId": "@@rules_kotlin+//src/main/starlark/core/repositories:compiler.bzl%kotlin_compiler_git_repository",
+            "attributes": {
+              "urls": [
+                "https://github.com/JetBrains/kotlin/releases/download/v1.9.23/kotlin-compiler-1.9.23.zip"
+              ],
+              "sha256": "93137d3aab9afa9b27cb06a824c2324195c6b6f6179d8a8653f440f5bd58be88"
+            }
+          },
+          "com_github_jetbrains_kotlin": {
+            "repoRuleId": "@@rules_kotlin+//src/main/starlark/core/repositories:compiler.bzl%kotlin_capabilities_repository",
+            "attributes": {
+              "git_repository_name": "com_github_jetbrains_kotlin_git",
+              "compiler_version": "1.9.23"
+            }
+          },
+          "com_github_google_ksp": {
+            "repoRuleId": "@@rules_kotlin+//src/main/starlark/core/repositories:ksp.bzl%ksp_compiler_plugin_repository",
+            "attributes": {
+              "urls": [
+                "https://github.com/google/ksp/releases/download/1.9.23-1.0.20/artifacts.zip"
+              ],
+              "sha256": "ee0618755913ef7fd6511288a232e8fad24838b9af6ea73972a76e81053c8c2d",
+              "strip_version": "1.9.23-1.0.20"
+            }
+          },
+          "com_github_pinterest_ktlint": {
+            "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_file",
+            "attributes": {
+              "sha256": "01b2e0ef893383a50dbeb13970fe7fa3be36ca3e83259e01649945b09d736985",
+              "urls": [
+                "https://github.com/pinterest/ktlint/releases/download/1.3.0/ktlint"
+              ],
+              "executable": true
+            }
+          },
+          "rules_android": {
+            "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+            "attributes": {
+              "sha256": "cd06d15dd8bb59926e4d65f9003bfc20f9da4b2519985c27e190cddc8b7a7806",
+              "strip_prefix": "rules_android-0.1.1",
+              "urls": [
+                "https://github.com/bazelbuild/rules_android/archive/v0.1.1.zip"
+              ]
+            }
+          }
+        },
+        "recordedRepoMappingEntries": [
+          [
+            "rules_kotlin+",
+            "bazel_tools",
+            "bazel_tools"
+          ]
+        ]
+      }
+    },
+    "@@rules_zig+//zig:extensions.bzl%zig": {
+      "general": {
+        "bzlTransitiveDigest": "YGSQ4/DqWHwI6H3DNqFThTQnUE1oy4wdziu0zeJdwoU=",
+        "usagesDigest": "5Qqmu0S1+OwHb0aBG/KBu5DgmxF14kqfy/QfNDpEHOI=",
+        "recordedFileInputs": {
+          "@@rules_zig+//zig/private/versions.json": "53774a948085f6845598b9af18a5e1ebee1cce6aea9dd24ab7b900cbe1a48056"
+        },
+        "recordedDirentsInputs": {},
+        "envVariables": {},
+        "generatedRepoSpecs": {
+          "zig_0.13.0_aarch64-linux": {
+            "repoRuleId": "@@rules_zig+//zig/private/repo:zig_repository.bzl%zig_repository",
+            "attributes": {
+              "url": "https://ziglang.org/download/0.13.0/zig-linux-aarch64-0.13.0.tar.xz",
+              "sha256": "041ac42323837eb5624068acd8b00cd5777dac4cf91179e8dad7a7e90dd0c556",
+              "zig_version": "0.13.0",
+              "platform": "aarch64-linux"
+            }
+          },
+          "zig_0.13.0_aarch64-macos": {
+            "repoRuleId": "@@rules_zig+//zig/private/repo:zig_repository.bzl%zig_repository",
+            "attributes": {
+              "url": "https://ziglang.org/download/0.13.0/zig-macos-aarch64-0.13.0.tar.xz",
+              "sha256": "46fae219656545dfaf4dce12fb4e8685cec5b51d721beee9389ab4194d43394c",
+              "zig_version": "0.13.0",
+              "platform": "aarch64-macos"
+            }
+          },
+          "zig_0.13.0_aarch64-windows": {
+            "repoRuleId": "@@rules_zig+//zig/private/repo:zig_repository.bzl%zig_repository",
+            "attributes": {
+              "url": "https://ziglang.org/download/0.13.0/zig-windows-aarch64-0.13.0.zip",
+              "sha256": "95ff88427af7ba2b4f312f45d2377ce7a033e5e3c620c8caaa396a9aba20efda",
+              "zig_version": "0.13.0",
+              "platform": "aarch64-windows"
+            }
+          },
+          "zig_0.13.0_x86_64-linux": {
+            "repoRuleId": "@@rules_zig+//zig/private/repo:zig_repository.bzl%zig_repository",
+            "attributes": {
+              "url": "https://ziglang.org/download/0.13.0/zig-linux-x86_64-0.13.0.tar.xz",
+              "sha256": "d45312e61ebcc48032b77bc4cf7fd6915c11fa16e4aad116b66c9468211230ea",
+              "zig_version": "0.13.0",
+              "platform": "x86_64-linux"
+            }
+          },
+          "zig_0.13.0_x86_64-macos": {
+            "repoRuleId": "@@rules_zig+//zig/private/repo:zig_repository.bzl%zig_repository",
+            "attributes": {
+              "url": "https://ziglang.org/download/0.13.0/zig-macos-x86_64-0.13.0.tar.xz",
+              "sha256": "8b06ed1091b2269b700b3b07f8e3be3b833000841bae5aa6a09b1a8b4773effd",
+              "zig_version": "0.13.0",
+              "platform": "x86_64-macos"
+            }
+          },
+          "zig_0.13.0_x86_64-windows": {
+            "repoRuleId": "@@rules_zig+//zig/private/repo:zig_repository.bzl%zig_repository",
+            "attributes": {
+              "url": "https://ziglang.org/download/0.13.0/zig-windows-x86_64-0.13.0.zip",
+              "sha256": "d859994725ef9402381e557c60bb57497215682e355204d754ee3df75ee3c158",
+              "zig_version": "0.13.0",
+              "platform": "x86_64-windows"
+            }
+          },
+          "zig_toolchains": {
+            "repoRuleId": "@@rules_zig+//zig/private/repo:toolchains_repo.bzl%toolchains_repo",
+            "attributes": {
+              "names": [
+                "zig_0.13.0_aarch64-linux",
+                "zig_0.13.0_aarch64-macos",
+                "zig_0.13.0_aarch64-windows",
+                "zig_0.13.0_x86_64-linux",
+                "zig_0.13.0_x86_64-macos",
+                "zig_0.13.0_x86_64-windows"
+              ],
+              "labels": [
+                "@zig_0.13.0_aarch64-linux//:zig_toolchain",
+                "@zig_0.13.0_aarch64-macos//:zig_toolchain",
+                "@zig_0.13.0_aarch64-windows//:zig_toolchain",
+                "@zig_0.13.0_x86_64-linux//:zig_toolchain",
+                "@zig_0.13.0_x86_64-macos//:zig_toolchain",
+                "@zig_0.13.0_x86_64-windows//:zig_toolchain"
+              ],
+              "zig_versions": [
+                "0.13.0",
+                "0.13.0",
+                "0.13.0",
+                "0.13.0",
+                "0.13.0",
+                "0.13.0"
+              ],
+              "exec_lengths": [
+                2,
+                2,
+                2,
+                2,
+                2,
+                2
+              ],
+              "exec_constraints": [
+                "@platforms//os:linux",
+                "@platforms//cpu:aarch64",
+                "@platforms//os:macos",
+                "@platforms//cpu:aarch64",
+                "@platforms//os:windows",
+                "@platforms//cpu:aarch64",
+                "@platforms//os:linux",
+                "@platforms//cpu:x86_64",
+                "@platforms//os:macos",
+                "@platforms//cpu:x86_64",
+                "@platforms//os:windows",
+                "@platforms//cpu:x86_64"
+              ]
+            }
+          }
+        },
+        "recordedRepoMappingEntries": [
+          [
+            "rules_zig+",
+            "bazel_skylib",
+            "bazel_skylib+"
+          ],
+          [
+            "rules_zig+",
+            "bazel_tools",
+            "bazel_tools"
+          ]
+        ]
+      }
+    }
+  }
 }

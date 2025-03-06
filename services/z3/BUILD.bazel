@@ -1,0 +1,14 @@
+load("@rules_zig//zig:defs.bzl", "zig_binary")
+
+zig_binary(
+    name = "z3",
+    main = "src/main.zig",
+    deps = [
+        "@zap_src//:zap",  # Use the external zap module
+    ],
+    cdeps = [
+        # Couldn't import cdeps directly in zap zig_module, so we do it here
+        "@zap_src//:facilio",
+        "@rules_zig//zig/lib:libc",
+    ],
+)
