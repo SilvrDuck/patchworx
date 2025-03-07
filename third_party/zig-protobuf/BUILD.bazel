@@ -1,0 +1,14 @@
+load("@rules_zig//zig:defs.bzl", "zig_module")
+
+filegroup(
+    name = "zig-protobuf-srcs",
+    srcs = glob(["src/*.zig"]),
+    visibility = ["//visibility:public"],
+)
+
+zig_module(
+    name = "zig-protobuf",
+    main = "src/protobuf.zig",
+    srcs = glob(["src/*.zig"]),
+    visibility = ["//visibility:public"],
+)
