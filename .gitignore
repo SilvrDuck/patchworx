@@ -1,6 +1,15 @@
 ###################################
 # OS & Editor Files
 ###################################
+# entire bazel documentation to help copilot be less dumb,
+# recreate by cloning the official bazel repo and running the following command:
+# cd site/en
+# find . -type f -name "*.md" | sort | while read f; do echo -e "\n\n# File: $f\n---\n"; cat "$f"; done > full_bazel_doc_latest.md
+full_bazel_doc_latest.md
+
+###################################
+# OS & Editor Files
+###################################
 .DS_Store
 Thumbs.db
 *.swp
@@ -10,8 +19,8 @@ Thumbs.db
 *.ipr
 *.iws
 .idea/
-.vscode/
 *.log
+.vscode/settings.json
 
 ###################################
 # Bazel

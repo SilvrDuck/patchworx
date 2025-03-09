@@ -9,7 +9,8 @@
 			"extensions": [
 				"bazelbuild.vscode-bazel",
 				"ms-azuretools.vscode-docker",
-				"ziglang.vscode-zig"
+				"ziglang.vscode-zig",
+				"ms-vscode.cpptools-extension-pack"
 			]
 		}
 	},

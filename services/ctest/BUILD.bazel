@@ -1,0 +1,35 @@
+
+
+proto_library(
+    name = "ctest_proto",
+    srcs = ["ctest.proto"],
+)
+
+cc_proto_library(
+    name = "ctest_cc_proto",
+    deps = [":ctest_proto"],
+)
+
+
+cc_binary(
+    name = "ctest",
+    srcs = ["ctest.cc"],
+    deps = [":ctest_cc_proto"],
+)
+
+
+genrule(
+    name = "proto_symlinks",
+    srcs = [":ctest_cc_proto"],
+    outs = ["proto_symlinks_done"],
+    cmd = """
+
+    echo "Creating symlinks for generated proto files"
+    echo $(RULEDIR)
+    echo $(BINDIR)
+
+    mkdir -p $(RULEDIR)/../../generated
+    ln -sf $(BINDIR)/services/ctest/ctest.pb.h $(RULEDIR)/../../generated/
+    touch $@
+    """,
+)
