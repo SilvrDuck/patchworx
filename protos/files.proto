@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package files;
+
+message File {
+  string name = 1;
+  int32 len = 2;
+}

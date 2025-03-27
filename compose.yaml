@@ -1,0 +1,7 @@
+services:
+  z3:
+    build:
+      context: services/z3
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"

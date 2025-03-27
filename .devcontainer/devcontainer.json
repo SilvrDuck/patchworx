@@ -7,19 +7,17 @@
 	"customizations": {
 		"vscode": {
 			"extensions": [
-				"bazelbuild.vscode-bazel",
 				"ms-azuretools.vscode-docker",
-				"ziglang.vscode-zig"
+				"ziglang.vscode-zig",
+				"ms-vscode.makefile-tools"
 			]
 		}
 	},
-	// "mounts": [
-	// 	"source=${localWorkspaceFolder}/.devcontainer/bazel-cache,target=/home/vscode/.cache/bazel,type=bind"
-	// ],
 	"remoteUser": "vscode",
 	"features": {
 		"ghcr.io/devcontainers-extra/features/zig:1": {
 			"version": "0.13.0"
-		}
+		},
+		"ghcr.io/devcontainers/features/docker-in-docker:2": {}
 	}
 }
