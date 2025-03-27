@@ -1,32 +1,31 @@
 const std = @import("std");
 const zap = @import("zap");
-
-fn on_request_verbose(r: zap.Request) void {
-    if (r.path) |the_path| {
-        std.debug.print("PATH: {s}\n", .{the_path});
-    }
-
-    if (r.query) |the_query| {
-        std.debug.print("QUERY: {s}\n", .{the_query});
-    }
-    r.sendBody("<html><body><h1>Hello from ZAP!!!</h1></body></html>") catch return;
-}
-
-fn on_request_minimal(r: zap.Request) void {
-    r.sendBody("<html><body><h1>Hello from ZAP!!!</h1></body></html>") catch return;
-}
+const files = @import("proto/files.pb.zig");
+const protobuf = @import("protobuf");
+const config = @import("config.zig");
+const file_handler = @import("file_handler.zig");
+const FileHandler = file_handler.FileHandler;
 
 pub fn main() !void {
+    var gpa = std.heap.GeneralPurposeAllocator(.{
+        .thread_safe = true,
+    }){};
+    const allocator = gpa.allocator();
+
+    const cfg = try config.Config.init(allocator);
+    defer cfg.deinit();
+
+    FileHandler.allocator = allocator;
+
     var listener = zap.HttpListener.init(.{
-        .port = 3000,
-        .on_request = on_request_verbose,
+        .port = cfg.port,
+        .on_request = FileHandler.on_request,
         .log = true,
         .max_clients = 100000,
     });
     try listener.listen();
 
-    std.debug.print("Listening on 0.0.0.0:3000\n", .{});
-
+    std.debug.print("Listening on 0.0.0.0:{}", .{cfg.port});
     // start worker threads
     zap.start(.{
         .threads = 2,
