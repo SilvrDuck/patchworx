@@ -3,8 +3,8 @@ const zap = @import("zap");
 const files = @import("proto/files.pb.zig");
 const protobuf = @import("protobuf");
 const config = @import("config.zig");
-const file_handler = @import("file_handler.zig");
-const FileHandler = file_handler.FileHandler;
+const RequestHandler = @import("request_handler.zig").RequestHandler;
+const DiskStorage = @import("storage/disk_storage.zig").DiskStorage;
 
 pub fn main() !void {
     var gpa = std.heap.GeneralPurposeAllocator(.{
@@ -15,11 +15,18 @@ pub fn main() !void {
     const cfg = try config.Config.init(allocator);
     defer cfg.deinit();
 
-    FileHandler.allocator = allocator;
+    // Storage
+    const storage = DiskStorage.storage();
+
+    // Initialize RequestHandler
+    // We don’t use the common struct.init pattern
+    // because of how zap works
+    RequestHandler.allocator = allocator;
+    RequestHandler.file_processing_fn = storage.writeFile;
 
     var listener = zap.HttpListener.init(.{
         .port = cfg.port,
-        .on_request = FileHandler.on_request,
+        .on_request = RequestHandler.on_request,
         .log = true,
         .max_clients = 100000,
     });
